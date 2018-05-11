@@ -10,9 +10,6 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 
 @RegisterMapper(BookMapper.class)
 public interface BookDAO {
-    @SqlQuery("SELECT count(*) FROM books")
-    int getCount();
-
     @SqlUpdate("INSERT INTO books (title, numberofpages, genre, isbn, authors) " +
             "VALUES (:title, :numberOfPages, :genre, :isbn, :authors)")
     int addBook(@BindBean Book book);

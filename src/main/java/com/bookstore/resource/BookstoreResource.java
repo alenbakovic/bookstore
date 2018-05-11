@@ -8,8 +8,6 @@ import lombok.AllArgsConstructor;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.LinkedList;
-import java.util.List;
 
 @Path("/bookstore")
 @Produces(MediaType.APPLICATION_JSON)
@@ -24,10 +22,10 @@ public class BookstoreResource {
     public Response addBook(Book book) {
         bookDAO.addBook(book);
         return Response.ok().build();
-
     }
 
     @GET
+    @Path("/getBook")
     public Book getBook(@QueryParam("bookId") Optional<Integer> bookId) {
         return bookDAO.getBookById(bookId.or(Integer.valueOf(1)));
     }

@@ -8,7 +8,7 @@ CREATE TABLE books (
 );
 
 
-INSERT INTO books
+INSERT INTO books (title, authors, numberofpages, genre, isbn)
     VALUES ('Na Drini cuprija',
             '{"Ivo Andric", "Ivo Andric"}',
             10,
