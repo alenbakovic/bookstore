@@ -12,10 +12,6 @@ import javax.validation.constraints.NotNull;
 @Getter
 public class BookstoreConfiguration extends Configuration {
 
-    @NotEmpty
-    @JsonProperty
-    private String name;
-
     @Valid
     @NotNull
     @JsonProperty

@@ -12,7 +12,6 @@ import org.skife.jdbi.v2.DBI;
 public class Bookstore extends Application<BookstoreConfiguration> {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Starting Bookstore service...");
         new Bookstore().run(args);
     }
 
@@ -22,8 +21,6 @@ public class Bookstore extends Application<BookstoreConfiguration> {
 
     @Override
     public void run(BookstoreConfiguration bookstoreConfiguration, Environment environment) throws Exception {
-        final String name = bookstoreConfiguration.getName();
-        System.out.println(name);
 
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, bookstoreConfiguration.getDatabase(), "postgresql");
