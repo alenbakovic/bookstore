@@ -1,10 +1,9 @@
 CREATE TABLE books (
-    book_id          serial PRIMARY KEY,
     title            text,
     authors          text ARRAY,
     numberOfPages    integer,
     genre            text,
-    isbn             text
+    isbn             text PRIMARY KEY
 );
 
 

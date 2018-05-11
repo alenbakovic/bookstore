@@ -26,7 +26,7 @@ public class Bookstore extends Application<BookstoreConfiguration> {
     @Override
     public void run(BookstoreConfiguration bookstoreConfiguration, Environment environment) throws Exception {
 
-        log.info("Configuring postgressql database...");
+        log.info("Configuring postgresql database...");
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, bookstoreConfiguration.getDatabase(), "postgresql");
         final BookDAO bookDAO = jdbi.onDemand(BookDAO.class);

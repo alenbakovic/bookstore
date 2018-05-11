@@ -26,8 +26,8 @@ public class BookstoreResource {
 
     @GET
     @Path("/getBook")
-    public Book getBook(@QueryParam("bookId") Optional<Integer> bookId) {
-        return bookDAO.getBookById(bookId.or(Integer.valueOf(1)));
+    public Book getBook(@QueryParam("isbn") Optional<String> isbn) {
+        return bookDAO.getBookByISBN(isbn.or("isbn"));
     }
 
 }

@@ -4,11 +4,8 @@ import com.bookstore.model.Book;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 
-import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.List;
 
 public class BookMapper implements ResultSetMapper<Book> {
     @Override
