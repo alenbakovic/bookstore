@@ -12,7 +12,7 @@ import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 public interface BookDAO {
     @SqlUpdate("INSERT INTO books (title, numberofpages, genre, isbn) " +
             "VALUES (:title, :numberOfPages, :genre, :isbn)")
-    int addBook(@BindBean Book book);
+    void addBook(@BindBean Book book);
 
     @SqlQuery("SELECT * FROM books WHERE isbn = :isbn")
     Book getBookByISBN(@Bind("isbn") String isbn);
