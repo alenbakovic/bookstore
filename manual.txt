@@ -1,0 +1,42 @@
+Manual:
+
+***Requirement***
+To run this application you need to have:
+	PostgreSQL installed - Version that is used for testing on local machine is: psql (PostgreSQL) 9.5.12
+	Maven installed - Version that is used for testing on local machine is: Apache Maven 3.3.9
+
+SERVER STEPS:
+
+1. Clone BookStore server from github
+	git clone https://github.com/alenbakovic/bookstore.git
+
+2. cd into bookstore and build project using maven (after this target folder will be created)
+	cd bookstore
+	mvn clean package
+
+3. Initialize database using init scripts
+	source src/main/resources/init_database.sh
+
+4. Run server with configuration file (look into conf file in order to change database url or port if it not default)
+	java -jar target/bookstore-1.0-SNAPSHOT.jar server src/main/resources/bookstore-configuration.yml
+
+
+Now the server and database are up and running.
+
+
+CLIENT STEPS:
+Next step is to run the client that will upload books to database and read few of them and print them in console.
+
+1. Clone BookStore client from github
+	git clone https://github.com/alenbakovic/bookstoreclient.git
+
+2. cd into bookstoreclient and build project using maven (after this target folder will be created)
+	cd bookstoreclient
+	mvn clean package
+
+3. Run client with following command
+	java -jar target/bookstore-client-1.0-SNAPSHOT.jar
+
+***IMPORTANT***
+Each time you want to run again you will have to clean database first, using script from server repository
+source src/main/resources/clean_database.sh
