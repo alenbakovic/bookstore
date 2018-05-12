@@ -15,6 +15,7 @@ public class BookMapper implements ResultSetMapper<Book> {
                 .numberOfPages(resultSet.getInt("numberofpages"))
                 .genre(resultSet.getString("genre"))
                 .isbn(resultSet.getString("isbn"))
+                .authors(resultSet.getString("authors"))
                 .build();
     }
 

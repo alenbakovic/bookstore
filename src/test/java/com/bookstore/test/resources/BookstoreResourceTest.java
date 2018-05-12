@@ -44,7 +44,7 @@ public class BookstoreResourceTest {
     public void setUp() {
         book = Book.builder()
                 .title("The Bridge on the Drina - Na Drini cuprija")
-                .authors(Arrays.asList("Ivo Andric"))
+                .authors("Ivo Andric")
                 .numberOfPages(379)
                 .genre("Historical fiction")
                 .isbn("9788650526507")
